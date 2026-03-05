@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Volume 1: Rejection Letters (RL)"
+---
+
+<main class="flex-1 md:ml-64 lg:ml-72 p-8 md:p-16 lg:p-24 max-w-4xl">
+    <div class="mb-12">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Archive</h3>
+        <h2 class="text-3xl font-bold mb-6">Volume 1: Rejection Letters (RL)</h2>
+        <p class="text-gray-600 dark:text-gray-400">A curated collection of heartbreaking, baffling, and occasionally hilarious rejection letters from academic publishers. Read them and weep (or laugh).</p>
+    </div>
+
+    <div class="space-y-12">
+        {% for post in site.categories.volume1 limit:20 %}
+        <div class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-8 rounded relative shadow-sm">
+            
+            <div class="absolute top-0 left-0 w-1 h-full bg-journal-500 rounded-l"></div>
+            
+            <header class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight">{{ post.title }}</h3>
+                    <span class="text-xs text-gray-400 whitespace-nowrap sm:ml-4 mt-2 sm:mt-0">Received: {{ post.date | date: "%B %d, %Y" }}</span>
+                </div>
+                
+                {% if post.rejection_type %}
+                <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{{ post.rejection_type }}</p>
+                {% endif %}
+            </header>
+
+            <div class="prose dark:prose-invert prose-sm max-w-none text-gray-700 dark:text-gray-300 italic">
+                {{ post.content | markdownify }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="mt-16 flex justify-between items-center border-t border-gray-200 dark:border-gray-800 pt-6">
+        <button class="text-sm font-semibold text-gray-400 cursor-not-allowed">&larr; Previous Page</button>
+        <span class="text-sm text-gray-500">Page 1</span>
+        <button class="text-sm font-semibold text-journal-600 hover:text-journal-500 transition-colors">Next Page &rarr;</button>
+    </div>
+</main>
