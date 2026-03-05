@@ -1,0 +1,30 @@
+---
+layout: default
+title: "Volume 2: Rejected Studies (RS)"
+---
+
+<main class="flex-1 md:ml-64 lg:ml-72 p-8 md:p-16 lg:p-24 max-w-4xl">
+    <div class="mb-12">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Archive</h3>
+        <h2 class="text-3xl font-bold mb-6">Volume 2: Rejected Studies (RS)</h2>
+        <p class="text-gray-600 dark:text-gray-400">Full manuscripts rejected by traditional venues, complete with unfiltered reviewer comments and author rebuttals.</p>
+    </div>
+
+    <div class="space-y-6">
+        {% for post in site.categories.volume2 limit:20 %}
+        <a href="{{ post.url }}" class="block p-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded hover:border-red-500 dark:hover:border-red-500 transition-colors group">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-red-600 transition-colors leading-tight">{{ post.title }}</h3>
+                <span class="text-xs text-gray-400 whitespace-nowrap ml-4">{{ post.date | date: "%B %d, %Y" }}</span>
+            </div>
+            <p class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest font-semibold">{{ post.discipline }}</p>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="mt-12 flex justify-between items-center border-t border-gray-200 dark:border-gray-800 pt-6">
+        <button class="text-sm font-semibold text-gray-400 cursor-not-allowed">&larr; Previous Page</button>
+        <span class="text-sm text-gray-500">Page 1</span>
+        <button class="text-sm font-semibold text-journal-600 hover:text-journal-500 transition-colors">Next Page &rarr;</button>
+    </div>
+</main>
