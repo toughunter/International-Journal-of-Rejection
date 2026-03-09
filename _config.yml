@@ -1,2 +1,5 @@
 url: "https://rejectedpaper.com"
 baseurl: ""
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
