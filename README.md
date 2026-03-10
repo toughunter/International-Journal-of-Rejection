@@ -1,1 +1,1 @@
-rejectedpaper.com
+International Journal of Rejections: https://rejectedpaper.com/
